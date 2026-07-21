@@ -56,4 +56,4 @@ Finally, I uploaded index.html, doctors.html, patient-dashboard.html, doctor-das
 
 ## Live Demo
 * AWS S3 Endpoint: https://onlinedoctorappointmet.s3.ap-south-1.amazonaws.com/DoctorAppointment/index.html
-* GitHub Repository: https://github.com/your-username/careconnect-health
+* GitHub Repository:  https://23jr1a0531.github.io/OnlineDoctorAppointment/
