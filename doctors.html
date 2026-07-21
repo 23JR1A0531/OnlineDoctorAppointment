@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CareConnect - Search Doctors</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo"><i class="fa-solid fa-heart-pulse"></i> CareConnect</a>
+      <nav class="nav-links">
+        <a href="index.html" class="nav-btn">Home</a>
+        <a href="doctors.html" class="nav-btn active">Find Doctors</a>
+        <a href="patient-dashboard.html" class="nav-btn">Patient Dashboard</a>
+        <a href="doctor-dashboard.html" class="nav-btn">Doctor Portal</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="search-header">
+      <h2>Find Available Specialists</h2>
+      <div class="filter-bar">
+        <select id="specialty-filter" onchange="filterDoctors()">
+          <option value="all">All Specialties</option>
+          <option value="General Physician">General Physician</option>
+          <option value="Cardiology">Cardiology</option>
+          <option value="Dermatology">Dermatology</option>
+          <option value="Pediatrics">Pediatrics</option>
+          <option value="Neurology">Neurology</option>
+          <option value="Orthopedics">Orthopedics</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Doctor Cards Grid (3 cards per row via CSS grid) -->
+    <div class="doctor-grid" id="doctor-list">
+
+      <!-- Doctor 1: General Physician -->
+      <div class="card doc-card" data-specialty="General Physician">
+        <div class="doc-header">
+          <img class="doc-avatar" src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&q=80&w=300" alt="Dr. Rajesh Sharma">
+          <div class="doc-info">
+            <h3>Dr. Rajesh Sharma</h3>
+            <span class="badge">General Physician</span>
+          </div>
+        </div>
+        <div class="doc-meta">
+          <span><i class="fas fa-graduation-cap"></i> MBBS, MD (Internal Medicine)</span>
+          <span><i class="fas fa-hospital"></i> Apollo Hospitals, Hyderabad</span>
+          <span><i class="fas fa-star"></i> 4.9 (142 reviews)</span>
+          <span class="doc-price">Consultation: ₹500</span>
+        </div>
+        <button class="btn" onclick="openModal('Dr. Rajesh Sharma', 'General Physician')">Book Appointment</button>
+      </div>
+
+      <!-- Doctor 2: Cardiology -->
+      <div class="card doc-card" data-specialty="Cardiology">
+        <div class="doc-header">
+          <img class="doc-avatar" src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&q=80&w=300" alt="Dr. Suresh Verma">
+          <div class="doc-info">
+            <h3>Dr. Suresh Verma</h3>
+            <span class="badge">Cardiology</span>
+          </div>
+        </div>
+        <div class="doc-meta">
+          <span><i class="fas fa-graduation-cap"></i> MBBS, DM (Cardiology)</span>
+          <span><i class="fas fa-hospital"></i> Fortis Healthcare, Mumbai</span>
+          <span><i class="fas fa-star"></i> 4.8 (115 reviews)</span>
+          <span class="doc-price">Consultation: ₹1,000</span>
+        </div>
+        <button class="btn" onclick="openModal('Dr. Suresh Verma', 'Cardiology')">Book Appointment</button>
+      </div>
+
+      <!-- Doctor 3: Dermatology -->
+      <div class="card doc-card" data-specialty="Dermatology">
+        <div class="doc-header">
+          <img class="doc-avatar" src="https://images.unsplash.com/photo-1594824813566-78a933f32f1f?auto=format&fit=crop&q=80&w=300" alt="Dr. Ananya Reddy">
+          <div class="doc-info">
+            <h3>Dr. Ananya Reddy</h3>
+            <span class="badge">Dermatology</span>
+          </div>
+        </div>
+        <div class="doc-meta">
+          <span><i class="fas fa-graduation-cap"></i> MBBS, MD (Dermatology)</span>
+          <span><i class="fas fa-hospital"></i> Max Super Speciality, Delhi</span>
+          <span><i class="fas fa-star"></i> 4.9 (98 reviews)</span>
+          <span class="doc-price">Consultation: ₹700</span>
+        </div>
+        <button class="btn" onclick="openModal('Dr. Ananya Reddy', 'Dermatology')">Book Appointment</button>
+      </div>
+
+      <!-- Doctor 4: Pediatrics -->
+      <div class="card doc-card" data-specialty="Pediatrics">
+        <div class="doc-header">
+          <img class="doc-avatar" src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&q=80&w=300" alt="Dr. Priya Nair">
+          <div class="doc-info">
+            <h3>Dr. Priya Nair</h3>
+            <span class="badge">Pediatrics</span>
+          </div>
+        </div>
+        <div class="doc-meta">
+          <span><i class="fas fa-graduation-cap"></i> MBBS, DCH (Pediatrics)</span>
+          <span><i class="fas fa-hospital"></i> Rainbow Children's Hospital, Bengaluru</span>
+          <span><i class="fas fa-star"></i> 4.9 (160 reviews)</span>
+          <span class="doc-price">Consultation: ₹600</span>
+        </div>
+        <button class="btn" onclick="openModal('Dr. Priya Nair', 'Pediatrics')">Book Appointment</button>
+      </div>
+
+      <!-- Doctor 5: Neurology -->
+      <div class="card doc-card" data-specialty="Neurology">
+        <div class="doc-header">
+          <img class="doc-avatar" src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&q=80&w=300" alt="Dr. Vikramaditya Rao">
+          <div class="doc-info">
+            <h3>Dr. Vikramaditya Rao</h3>
+            <span class="badge">Neurology</span>
+          </div>
+        </div>
+        <div class="doc-meta">
+          <span><i class="fas fa-graduation-cap"></i> MBBS, DM (Neurology)</span>
+          <span><i class="fas fa-hospital"></i> Manipal Hospitals, Chennai</span>
+          <span><i class="fas fa-star"></i> 4.7 (88 reviews)</span>
+          <span class="doc-price">Consultation: ₹1,200</span>
+        </div>
+        <button class="btn" onclick="openModal('Dr. Vikramaditya Rao', 'Neurology')">Book Appointment</button>
+      </div>
+
+      <!-- Doctor 6: Orthopedics -->
+      <div class="card doc-card" data-specialty="Orthopedics">
+        <div class="doc-header">
+          <img class="doc-avatar" src="https://images.unsplash.com/photo-1651008376811-b90baee60c1f?auto=format&fit=crop&q=80&w=300" alt="Dr. Arjun Mehta">
+          <div class="doc-info">
+            <h3>Dr. Arjun Mehta</h3>
+            <span class="badge">Orthopedics</span>
+          </div>
+        </div>
+        <div class="doc-meta">
+          <span><i class="fas fa-graduation-cap"></i> MBBS, MS (Orthopedics)</span>
+          <span><i class="fas fa-hospital"></i> Medanta - The Medicity, Gurgaon</span>
+          <span><i class="fas fa-star"></i> 4.8 (104 reviews)</span>
+          <span class="doc-price">Consultation: ₹850</span>
+        </div>
+        <button class="btn" onclick="openModal('Dr. Arjun Mehta', 'Orthopedics')">Book Appointment</button>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- BOOKING MODAL -->
+  <div class="modal-overlay" id="booking-modal">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 id="modal-doc-name">Book Appointment</h3>
+        <button class="close-btn" onclick="closeModal()">&times;</button>
+      </div>
+      <p id="modal-doc-spec" class="subtitle"></p>
+      
+      <div class="form-group">
+        <label for="consult-type">Consultation Mode</label>
+        <select id="consult-type">
+          <option value="In-Person">In-Person Visit (₹800)</option>
+          <option value="Video Call">HD Video Call (₹600)</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Select Time Slot (Today)</label>
+        <div class="slots-grid" id="slots-container">
+          <!-- Slots rendered dynamically via JS -->
+        </div>
+      </div>
+
+      <div class="modal-actions">
+        <button class="btn btn-secondary" onclick="closeModal()">Cancel</button>
+        <button class="btn" onclick="confirmBooking()">Confirm & Book</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

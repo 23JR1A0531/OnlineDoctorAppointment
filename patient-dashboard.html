@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CareConnect - Patient Dashboard</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo"><i class="fa-solid fa-heart-pulse"></i> CareConnect</a>
+      <nav class="nav-links">
+        <a href="index.html" class="nav-btn">Home</a>
+        <a href="doctors.html" class="nav-btn">Find Doctors</a>
+        <a href="patient-dashboard.html" class="nav-btn active">Patient Dashboard</a>
+        <a href="doctor-dashboard.html" class="nav-btn">Doctor Portal</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="dashboard-header">
+      <h2>Welcome Back, Patient</h2>
+      <p>Manage your upcoming consultations and health records.</p>
+    </div>
+
+    <div class="card">
+      <h3>Upcoming Appointments</h3>
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Doctor</th>
+              <th>Specialty</th>
+              <th>Date & Time</th>
+              <th>Mode</th>
+              <th>Fee</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="patient-appointments-list">
+            <!-- Dynamic Injection via app.js -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      renderPatientDashboard();
+    });
+  </script>
+</body>
+</html>

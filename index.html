@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CareConnect - Home</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo"><i class="fa-solid fa-heart-pulse"></i> CareConnect</a>
+      <nav class="nav-links">
+        <a href="index.html" class="nav-btn active">Home</a>
+        <a href="doctors.html" class="nav-btn">Find Doctors</a>
+        <a href="patient-dashboard.html" class="nav-btn">Patient Dashboard</a>
+        <a href="doctor-dashboard.html" class="nav-btn">Doctor Portal</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>Find & Book Your Doctor Appointment Online</h1>
+      <p>Instant access to top-rated Indian specialists, video consultations, and real-time slot reservations.</p>
+      
+      <form class="search-box" action="doctors.html" method="GET">
+        <div class="input-group">
+          <i class="fa-solid fa-stethoscope"></i>
+          <select name="specialty" id="specialty-select">
+            <option value="all">All Specialties</option>
+            <option value="Cardiology">Cardiology</option>
+            <option value="Dermatology">Dermatology</option>
+            <option value="Pediatrics">Pediatrics</option>
+            <option value="Neurology">Neurology</option>
+            <option value="Orthopedics">Orthopedics</option>
+          </select>
+        </div>
+        <div class="input-group">
+          <i class="fa-solid fa-location-dot"></i>
+          <input type="text" placeholder="Location or City (e.g. Mumbai, New Delhi, Bangalore)" name="location">
+        </div>
+        <button type="submit" class="btn"><i class="fa-solid fa-magnifying-glass"></i> Search Doctors</button>
+      </form>
+    </section>
+
+    <section class="features">
+      <h2>Why Choose CareConnect?</h2>
+      <div class="grid-3">
+        <div class="card feature-card">
+          <i class="fa-solid fa-user-doctor feature-icon"></i>
+          <h3>Verified Indian Doctors</h3>
+          <p>Access top certified specialists across major hospitals with authentic patient reviews.</p>
+        </div>
+        <div class="card feature-card">
+          <i class="fa-solid fa-calendar-check feature-icon"></i>
+          <h3>Real-time Slot Booking</h3>
+          <p>Instantly secure appointment slots without long queue times or double booking.</p>
+        </div>
+        <div class="card feature-card">
+          <i class="fa-solid fa-video feature-icon"></i>
+          <h3>HD Telehealth</h3>
+          <p>Consult with top specialists from the comfort of your home via secure video call.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 CareConnect Health India Inc. All rights reserved.</p>
+  </footer>
+</body>
+</html>
