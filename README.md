@@ -55,5 +55,5 @@ I added a public read policy under the bucket permissions so visitors can view t
 Finally, I uploaded index.html, doctors.html, patient-dashboard.html, doctor-dashboard.html, along with the css and js folders directly into the bucket root.
 
 ## Live Demo
-* AWS S3 Endpoint: https://onlinedoctorappointmet.s3.ap-south-1.amazonaws.com/DoctorAppointment/index.html
 * GitHub Repository:  https://23jr1a0531.github.io/OnlineDoctorAppointment/
+* AWS S3 Endpoint: https://onlinedoctorappointmet.s3.ap-south-1.amazonaws.com/DoctorAppointment/index.html
